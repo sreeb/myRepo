@@ -1,0 +1,222 @@
+  <configuration>
+    
+    <property>
+      <name>hadoop.kms.audit.aggregation.window.ms</name>
+      <value>10000</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.kerberos.keytab</name>
+      <value>/etc/security/keytabs/spnego.service.keytab</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.kerberos.name.rules</name>
+      <value>RULE:[1:$1@$0](ambari-qa-dcp_staging@QUANTUM.COM)s/.*/ambari-qa/
+RULE:[1:$1@$0](hbase-dcp_staging@QUANTUM.COM)s/.*/hbase/
+RULE:[1:$1@$0](hdfs-dcp_staging@QUANTUM.COM)s/.*/hdfs/
+RULE:[1:$1@$0](spark-dcp_staging@QUANTUM.COM)s/.*/spark/
+RULE:[1:$1@$0](.*@QUANTUM.COM)s/@.*//
+RULE:[2:$1@$0](activity_analyzer@QUANTUM.COM)s/.*/activity_analyzer/
+RULE:[2:$1@$0](activity_explorer@QUANTUM.COM)s/.*/activity_explorer/
+RULE:[2:$1@$0](amshbase@QUANTUM.COM)s/.*/ams/
+RULE:[2:$1@$0](amszk@QUANTUM.COM)s/.*/ams/
+RULE:[2:$1@$0](dn@QUANTUM.COM)s/.*/hdfs/
+RULE:[2:$1@$0](falcon@QUANTUM.COM)s/.*/falcon/
+RULE:[2:$1@$0](hbase@QUANTUM.COM)s/.*/hbase/
+RULE:[2:$1@$0](hive@QUANTUM.COM)s/.*/hive/
+RULE:[2:$1@$0](jhs@QUANTUM.COM)s/.*/mapred/
+RULE:[2:$1@$0](jn@QUANTUM.COM)s/.*/hdfs/
+RULE:[2:$1@$0](knox@QUANTUM.COM)s/.*/knox/
+RULE:[2:$1@$0](nm@QUANTUM.COM)s/.*/yarn/
+RULE:[2:$1@$0](nn@QUANTUM.COM)s/.*/hdfs/
+RULE:[2:$1@$0](oozie@QUANTUM.COM)s/.*/oozie/
+RULE:[2:$1@$0](rangeradmin@QUANTUM.COM)s/.*/ranger/
+RULE:[2:$1@$0](rangerkms@QUANTUM.COM)s/.*/keyadmin/
+RULE:[2:$1@$0](rangerusersync@QUANTUM.COM)s/.*/rangerusersync/
+RULE:[2:$1@$0](rm@QUANTUM.COM)s/.*/yarn/
+RULE:[2:$1@$0](yarn@QUANTUM.COM)s/.*/yarn/
+DEFAULT</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.kerberos.principal</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.signer.secret.provider</name>
+      <value>random</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.signer.secret.provider.zookeeper.auth.type</name>
+      <value>kerberos</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.signer.secret.provider.zookeeper.connection.string</name>
+      <value>#HOSTNAME#:#PORT#,...</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.signer.secret.provider.zookeeper.kerberos.keytab</name>
+      <value>/etc/security/keytabs/spnego.service.keytab</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.signer.secret.provider.zookeeper.kerberos.principal</name>
+      <value>HTTP/_HOST@QUANTUM.COM</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.signer.secret.provider.zookeeper.path</name>
+      <value>/hadoop-kms/hadoop-auth-signature-secret</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.authentication.type</name>
+      <value>kerberos</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.cache.enable</name>
+      <value>true</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.cache.timeout.ms</name>
+      <value>600000</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.current.key.cache.timeout.ms</name>
+      <value>30000</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.key.provider.uri</name>
+      <value>dbks://http@localhost:9292/kms</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ambari-server-dcp_staging.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ambari-server-dcp_staging.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ambari.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ambari.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.hive.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.hive.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.HTTP.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.HTTP.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.keyadmin.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.keyadmin.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.keyadmin.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.livy.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.livy.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.livy.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.oozie.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.oozie.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ranger.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ranger.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.ranger.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.yarn.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.yarn.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.proxyuser.yarn.users</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.kms.security.authorization.manager</name>
+      <value>org.apache.ranger.authorization.kms.authorizer.RangerKmsAuthorizer</value>
+    </property>
+    
+    <property>
+      <name>hadoop.security.keystore.JavaKeyStoreProvider.password</name>
+      <value>none</value>
+    </property>
+    
+  </configuration>
